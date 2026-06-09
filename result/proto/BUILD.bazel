@@ -1,0 +1,42 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+load("@io_bazel_rules_go//proto:def.bzl", "go_proto_library")
+load("@rules_proto//proto:defs.bzl", "proto_library")
+load("//bazel/go:write_go_generated_source_files.bzl", "write_go_generated_source_files")
+
+# gazelle:exclude exec_diff.pb.go
+# gazelle:exclude exec_diff_pb.d.ts
+
+go_library(
+    name = "proto",
+    srcs = ["exec_diff.pb.go"],
+    importpath = "github.com/aspect-build/execlog-diff/result/proto",
+    visibility = ["//:__subpackages__"],
+    deps = [
+        "//diagnostic:diagnostic_go_proto",
+        "@org_golang_google_protobuf//reflect/protoreflect",
+        "@org_golang_google_protobuf//runtime/protoimpl",
+    ],
+)
+
+proto_library(
+    name = "exec_diff_proto",
+    srcs = ["exec_diff.proto"],
+    visibility = ["//visibility:public"],
+    deps = ["//diagnostic:diagnostic_proto"],
+)
+
+go_proto_library(
+    name = "proto_gen",
+    importpath = "github.com/aspect-build/execlog-diff/result/proto",
+    proto = ":exec_diff_proto",
+    visibility = ["//:__subpackages__"],
+    deps = ["//diagnostic:diagnostic_go_proto_gen"],
+)
+
+write_go_generated_source_files(
+    name = "write_pb_go",
+    src = ":proto_gen",
+    output_files = [
+        "exec_diff.pb.go",
+    ],
+)

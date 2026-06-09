@@ -1,0 +1,3 @@
+[1;33m//cli/pro/pkg/aspect/execlog/normalize:normalize[0m
+[0;32m//cli/pro/pkg/aspect/execlog/tree/blades:blades[0m
+[0;32m//cli/pro/pkg/aspect/execlog/tree:tree[0m

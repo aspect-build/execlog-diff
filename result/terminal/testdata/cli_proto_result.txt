@@ -1,0 +1,344 @@
+{
+  "result":  {
+    "execDiff":  {
+      "nodes":  [
+        {
+          "actionHash":  "2cf00ecb73df24fafa48abd00f379ed07cf4ba2be48f7871dd5938238603734411016bcb824ad72cf6e8045ce8bfc687",
+          "targetLabel":  "//cli/pro/pkg/aspect/execlog/tree/blades:blades",
+          "reason":  "CHANGED",
+          "changes":  [
+            {
+              "reason":  "CHANGED",
+              "inputFileListChanges":  {
+                "path":  "bazel-out/darwin_arm64-fastbuild/bin/cli/pro/pkg/aspect/execlog/types/types.x"
+              }
+            },
+            {
+              "reason":  "CHANGED",
+              "outputFileListChanges":  {
+                "path":  "bazel-out/darwin_arm64-fastbuild/bin/cli/pro/pkg/aspect/execlog/tree/blades/blades.a",
+                "sizeBytes":  0
+              }
+            }
+          ],
+          "children":  [
+            {
+              "child":  "dbaaed91cf27a257e0e8efb6af32d69e86ef083e7dbaf438366c8ebf83e8da79c72d0dde46f22cd4771c08871b50468c",
+              "changedFiles":  [
+                {
+                  "reason":  "CHANGED",
+                  "inputFileListChanges":  {
+                    "path":  "bazel-out/darwin_arm64-fastbuild/bin/cli/pro/pkg/aspect/execlog/types/types.x",
+                    "sizeBytes":  1
+                  }
+                }
+              ],
+              "reason":  "CHANGED"
+            }
+          ]
+        },
+        {
+          "actionHash":  "3bee30558fafdaca0309110ef70aaa69f8772291ac136225ecab8e20ce047b637e0072ca79e96c37b7311fdf1763f4eb",
+          "targetLabel":  "//cli/pro/pkg/aspect/execlog/normalize:normalize",
+          "reason":  "CHANGED",
+          "changes":  [
+            {
+              "reason":  "CHANGED",
+              "inputFileListChanges":  {
+                "path":  "bazel-out/darwin_arm64-fastbuild/bin/cli/pro/pkg/aspect/execlog/types/types.x",
+                "sizeBytes":  1000
+              }
+            },
+            {
+              "reason":  "CHANGED",
+              "outputFileListChanges":  {
+                "path":  "bazel-out/darwin_arm64-fastbuild/bin/cli/pro/pkg/aspect/execlog/normalize/normalize.a",
+                "sizeBytes":  2000
+              }
+            }
+          ],
+          "children":  [
+            {
+              "child":  "dbaaed91cf27a257e0e8efb6af32d69e86ef083e7dbaf438366c8ebf83e8da79c72d0dde46f22cd4771c08871b50468c",
+              "changedFiles":  [
+                {
+                  "reason":  "CHANGED",
+                  "inputFileListChanges":  {
+                    "path":  "bazel-out/darwin_arm64-fastbuild/bin/cli/pro/pkg/aspect/execlog/types/types.x",
+                    "sizeBytes":  5000
+                  }
+                }
+              ],
+              "reason":  "CHANGED"
+            }
+          ]
+        },
+        {
+          "actionHash":  "478fb8a65b546ee8396e5368fefb73a647e3f88367d0f7b82a8be4114024ac361f2cda2cd81c1990d15f27e5238ca691",
+          "targetLabel":  "//cli/pro/pkg/aspect/execlog/tree:tree",
+          "reason":  "CHANGED",
+          "changes":  [
+            {
+              "reason":  "CHANGED",
+              "inputFileListChanges":  {
+                "path":  "bazel-out/darwin_arm64-fastbuild/bin/cli/pro/pkg/aspect/execlog/types/types.x",
+                "sizeBytes":  5000
+              }
+            },
+            {
+              "reason":  "CHANGED",
+              "outputFileListChanges":  {
+                "path":  "bazel-out/darwin_arm64-fastbuild/bin/cli/pro/pkg/aspect/execlog/tree/tree.a",
+                "sizeBytes":  5000
+              }
+            }
+          ],
+          "children":  [
+            {
+              "child":  "dbaaed91cf27a257e0e8efb6af32d69e86ef083e7dbaf438366c8ebf83e8da79c72d0dde46f22cd4771c08871b50468c",
+              "changedFiles":  [
+                {
+                  "reason":  "CHANGED",
+                  "inputFileListChanges":  {
+                    "path":  "bazel-out/darwin_arm64-fastbuild/bin/cli/pro/pkg/aspect/execlog/types/types.x",
+                    "sizeBytes":  5000000
+                  }
+                }
+              ],
+              "reason":  "CHANGED"
+            }
+          ]
+        },
+        {
+          "actionHash":  "7f63336c77af776fcf5804c08f00cb4307fab8e86e62ec7a0e4c1eb38cd51757cffd9671dd99bc253848f5aa9e485c82",
+          "targetLabel":  "//cli/pro:pro",
+          "reason":  "CHANGED",
+          "changes":  [
+            {
+              "reason":  "CHANGED",
+              "inputFileListChanges":  {
+                "path":  "bazel-out/darwin_arm64-fastbuild/bin/cli/pro/pkg/aspect/execlog/normalize/normalize.a",
+                "sizeBytes":  5000000
+              }
+            },
+            {
+              "reason":  "CHANGED",
+              "inputFileListChanges":  {
+                "path":  "bazel-out/darwin_arm64-fastbuild/bin/cli/pro/pkg/aspect/execlog/tree/tree.a",
+                "sizeBytes":  5000000
+              }
+            },
+            {
+              "reason":  "CHANGED",
+              "inputFileListChanges":  {
+                "path":  "bazel-out/darwin_arm64-fastbuild/bin/cli/pro/pkg/aspect/execlog/convert/convert.a",
+                "sizeBytes":  5000000
+              }
+            },
+            {
+              "reason":  "CHANGED",
+              "inputFileListChanges":  {
+                "path":  "bazel-out/darwin_arm64-fastbuild/bin/cli/pro/pkg/aspect/execlog/tree/blades/blades.a",
+                "sizeBytes":  5000000
+              }
+            },
+            {
+              "reason":  "CHANGED",
+              "inputFileListChanges":  {
+                "path":  "bazel-out/darwin_arm64-fastbuild/bin/cli/pro/pkg/aspect/execlog/execlog.a",
+                "sizeBytes":  5000000
+              }
+            },
+            {
+              "reason":  "CHANGED",
+              "inputFileListChanges":  {
+                "path":  "bazel-out/darwin_arm64-fastbuild/bin/cli/pro/pkg/aspect/execlog/types/types.a",
+                "sizeBytes":  5000000
+              }
+            }
+          ],
+          "children":  [
+            {
+              "child":  "478fb8a65b546ee8396e5368fefb73a647e3f88367d0f7b82a8be4114024ac361f2cda2cd81c1990d15f27e5238ca691",
+              "changedFiles":  [
+                {
+                  "reason":  "CHANGED",
+                  "inputFileListChanges":  {
+                    "path":  "bazel-out/darwin_arm64-fastbuild/bin/cli/pro/pkg/aspect/execlog/tree/tree.a",
+                    "sizeBytes":  50000000000
+                  }
+                }
+              ],
+              "reason":  "CHANGED"
+            },
+            {
+              "child":  "c61db9a4337fa5aa95b1a7d0481f347defa8fd0fc232f541ee91fee785540c2da0acb5fbab74333f6aa38dc5a4f68a37",
+              "changedFiles":  [
+                {
+                  "reason":  "CHANGED",
+                  "inputFileListChanges":  {
+                    "path":  "bazel-out/darwin_arm64-fastbuild/bin/cli/pro/pkg/aspect/execlog/convert/convert.a",
+                    "sizeBytes":  50000000000
+                  }
+                }
+              ],
+              "reason":  "CHANGED"
+            },
+            {
+              "child":  "2cf00ecb73df24fafa48abd00f379ed07cf4ba2be48f7871dd5938238603734411016bcb824ad72cf6e8045ce8bfc687",
+              "changedFiles":  [
+                {
+                  "reason":  "CHANGED",
+                  "inputFileListChanges":  {
+                    "path":  "bazel-out/darwin_arm64-fastbuild/bin/cli/pro/pkg/aspect/execlog/tree/blades/blades.a",
+                    "sizeBytes":  50000000000
+                  }
+                }
+              ],
+              "reason":  "CHANGED"
+            },
+            {
+              "child":  "ac3ef144d2e2a1d83bd4e739cb92deb7d02a131ed207c6417bdabdb870d9a34a02e6633aaca41ad57a1248a305bf59b2",
+              "changedFiles":  [
+                {
+                  "reason":  "CHANGED",
+                  "inputFileListChanges":  {
+                    "path":  "bazel-out/darwin_arm64-fastbuild/bin/cli/pro/pkg/aspect/execlog/execlog.a",
+                    "sizeBytes":  50000000000
+                  }
+                }
+              ],
+              "reason":  "CHANGED"
+            },
+            {
+              "child":  "dbaaed91cf27a257e0e8efb6af32d69e86ef083e7dbaf438366c8ebf83e8da79c72d0dde46f22cd4771c08871b50468c",
+              "changedFiles":  [
+                {
+                  "reason":  "CHANGED",
+                  "inputFileListChanges":  {
+                    "path":  "bazel-out/darwin_arm64-fastbuild/bin/cli/pro/pkg/aspect/execlog/types/types.a",
+                    "sizeBytes":  50000000000
+                  }
+                }
+              ],
+              "reason":  "CHANGED"
+            },
+            {
+              "child":  "3bee30558fafdaca0309110ef70aaa69f8772291ac136225ecab8e20ce047b637e0072ca79e96c37b7311fdf1763f4eb",
+              "changedFiles":  [
+                {
+                  "reason":  "CHANGED",
+                  "inputFileListChanges":  {
+                    "path":  "bazel-out/darwin_arm64-fastbuild/bin/cli/pro/pkg/aspect/execlog/normalize/normalize.a",
+                    "sizeBytes":  50000000000
+                  }
+                }
+              ],
+              "reason":  "CHANGED"
+            }
+          ]
+        },
+        {
+          "actionHash":  "c61db9a4337fa5aa95b1a7d0481f347defa8fd0fc232f541ee91fee785540c2da0acb5fbab74333f6aa38dc5a4f68a37",
+          "targetLabel":  "//cli/pro/pkg/aspect/execlog/convert:convert",
+          "reason":  "CHANGED",
+          "changes":  [
+            {
+              "reason":  "CHANGED",
+              "inputFileListChanges":  {
+                "path":  "bazel-out/darwin_arm64-fastbuild/bin/cli/pro/pkg/aspect/execlog/types/types.x",
+                "sizeBytes":  50000000000
+              }
+            },
+            {
+              "reason":  "CHANGED",
+              "outputFileListChanges":  {
+                "path":  "bazel-out/darwin_arm64-fastbuild/bin/cli/pro/pkg/aspect/execlog/convert/convert.a",
+                "sizeBytes":  50000000000
+              }
+            }
+          ],
+          "children":  [
+            {
+              "child":  "dbaaed91cf27a257e0e8efb6af32d69e86ef083e7dbaf438366c8ebf83e8da79c72d0dde46f22cd4771c08871b50468c",
+              "changedFiles":  [
+                {
+                  "reason":  "CHANGED",
+                  "inputFileListChanges":  {
+                    "path":  "bazel-out/darwin_arm64-fastbuild/bin/cli/pro/pkg/aspect/execlog/types/types.x",
+                    "sizeBytes":  50000000000
+                  }
+                }
+              ],
+              "reason":  "CHANGED"
+            }
+          ]
+        },
+        {
+          "actionHash":  "ac3ef144d2e2a1d83bd4e739cb92deb7d02a131ed207c6417bdabdb870d9a34a02e6633aaca41ad57a1248a305bf59b2",
+          "targetLabel":  "//cli/pro/pkg/aspect/execlog:execlog",
+          "reason":  "CHANGED",
+          "changes":  [
+            {
+              "reason":  "CHANGED",
+              "inputFileListChanges":  {
+                "path":  "bazel-out/darwin_arm64-fastbuild/bin/cli/pro/pkg/aspect/execlog/types/types.x",
+                "sizeBytes":  50000000000
+              }
+            },
+            {
+              "reason":  "CHANGED",
+              "outputFileListChanges":  {
+                "path":  "bazel-out/darwin_arm64-fastbuild/bin/cli/pro/pkg/aspect/execlog/execlog.a",
+                "sizeBytes":  50000000000
+              }
+            }
+          ],
+          "children":  [
+            {
+              "child":  "dbaaed91cf27a257e0e8efb6af32d69e86ef083e7dbaf438366c8ebf83e8da79c72d0dde46f22cd4771c08871b50468c",
+              "changedFiles":  [
+                {
+                  "reason":  "CHANGED",
+                  "inputFileListChanges":  {
+                    "path":  "bazel-out/darwin_arm64-fastbuild/bin/cli/pro/pkg/aspect/execlog/types/types.x",
+                    "sizeBytes":  50000000000
+                  }
+                }
+              ],
+              "reason":  "CHANGED"
+            }
+          ]
+        },
+        {
+          "actionHash":  "dbaaed91cf27a257e0e8efb6af32d69e86ef083e7dbaf438366c8ebf83e8da79c72d0dde46f22cd4771c08871b50468c",
+          "targetLabel":  "//cli/pro/pkg/aspect/execlog/types:types",
+          "reason":  "CHANGED",
+          "changes":  [
+            {
+              "reason":  "CHANGED",
+              "inputFileListChanges":  {
+                "path":  "cli/pro/pkg/aspect/execlog/types/testing_file.go",
+                "sizeBytes":  50000000000
+              }
+            },
+            {
+              "reason":  "CHANGED",
+              "outputFileListChanges":  {
+                "path":  "bazel-out/darwin_arm64-fastbuild/bin/cli/pro/pkg/aspect/execlog/types/types.x",
+                "sizeBytes":  50000000000
+              }
+            },
+            {
+              "reason":  "CHANGED",
+              "outputFileListChanges":  {
+                "path":  "bazel-out/darwin_arm64-fastbuild/bin/cli/pro/pkg/aspect/execlog/types/types.a",
+                "sizeBytes":  50000000000
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

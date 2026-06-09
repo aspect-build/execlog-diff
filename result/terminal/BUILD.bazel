@@ -1,0 +1,42 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "terminal",
+    srcs = [
+        "colours.go",
+        "exec_diff.go",
+        "helpers.go",
+        "list_labels.go",
+        "terminal.go",
+    ],
+    importpath = "github.com/aspect-build/execlog-diff/result/terminal",
+    visibility = [
+        "//:__subpackages__",
+    ],
+    deps = [
+        "//result/proto",
+        "//diagnostic:diagnostic_go_proto",
+    ],
+)
+
+filegroup(
+    name = "testdata",
+    testonly = True,
+    srcs = glob(["testdata/**/*.txt"]),
+    visibility = ["//result/terminal:__subpackages__"],
+)
+
+go_test(
+    name = "terminal_test",
+    srcs = ["terminal_test.go"],
+    data = [
+        ":testdata",
+    ],
+    embed = [":terminal"],
+    deps = [
+        "//result/proto",
+        "@com_github_onsi_gomega//:gomega",
+        "@org_golang_google_protobuf//encoding/protojson",
+        "@tools_gotest_v3//golden",
+    ],
+)

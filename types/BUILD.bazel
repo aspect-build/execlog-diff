@@ -1,0 +1,22 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "types",
+    srcs = [
+        "exec_log_entry.go",
+        "file.go",
+        "input_set.go",
+        "runfiles_tree.go",
+        "spawn.go",
+        "vertex.go",
+    ],
+    importpath = "github.com/aspect-build/execlog-diff/types",
+    visibility = ["//:__subpackages__"],
+)
+
+go_test(
+    name = "types_test",
+    srcs = ["vertex_test.go"],
+    embed = [":types"],
+    deps = ["@com_github_onsi_gomega//:gomega"],
+)

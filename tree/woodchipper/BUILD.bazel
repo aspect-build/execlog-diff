@@ -1,0 +1,40 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "woodchipper",
+    srcs = [
+        "gc.go",
+        "walker.go",
+        "woodchipper.go",
+    ],
+    importpath = "github.com/aspect-build/execlog-diff/tree/woodchipper",
+    visibility = ["//tree:__subpackages__"],
+    deps = [
+        "//context",
+        "//normalizer",
+        "//tree/seed",
+        "//types",
+    ],
+)
+
+go_test(
+    name = "woodchipper_test",
+    srcs = [
+        "gc_test.go",
+        "walker_test.go",
+        "woodchipper_test.go",
+    ],
+    data = [
+        "//normalizer:testdata",
+    ],
+    embed = [":woodchipper"],
+    deps = [
+        "//context",
+        "//normalizer",
+        "//test-data/helpers",
+        "//tree/seed",
+        "//types",
+        "//diagnostic:diagnostic_go_proto",
+        "@com_github_onsi_gomega//:gomega",
+    ],
+)

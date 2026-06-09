@@ -1,0 +1,98 @@
+[0;32m//cli/pro/pkg/aspect/execlog/convert:convert[0m     [0;31m(Caused [0m[0;31m1[0m[0;31m Rebuilds)[0m
+    Changed Output Files
+        - bazel-out/darwin_arm64-fastbuild/bin/cli/pro/pkg/aspect/execlog/convert/convert.a  [0;36m([0m[0;36m46.57 GB[0m[0;36m)[0m
+
+    Changed Input Files
+        - bazel-out/darwin_arm64-fastbuild/bin/cli/pro/pkg/aspect/execlog/types/types.x  [0;36m([0m[0;36m46.57 GB[0m[0;36m)[0m
+
+    Changed Dependencies
+        [1;33m//cli/pro/pkg/aspect/execlog/types:types[0m
+            - bazel-out/darwin_arm64-fastbuild/bin/cli/pro/pkg/aspect/execlog/types/types.x
+
+
+[0;32m//cli/pro/pkg/aspect/execlog/normalize:normalize[0m     [0;31m(Caused [0m[0;31m1[0m[0;31m Rebuilds)[0m
+    Changed Output Files
+        - bazel-out/darwin_arm64-fastbuild/bin/cli/pro/pkg/aspect/execlog/normalize/normalize.a  [0;36m([0m[0;36m1.95 KB[0m[0;36m)[0m
+
+    Changed Input Files
+        - bazel-out/darwin_arm64-fastbuild/bin/cli/pro/pkg/aspect/execlog/types/types.x  [0;36m([0m[0;36m1000 Bytes[0m[0;36m)[0m
+
+    Changed Dependencies
+        [1;33m//cli/pro/pkg/aspect/execlog/types:types[0m
+            - bazel-out/darwin_arm64-fastbuild/bin/cli/pro/pkg/aspect/execlog/types/types.x
+
+
+[0;32m//cli/pro/pkg/aspect/execlog/tree/blades:blades[0m     [0;31m(Caused [0m[0;31m1[0m[0;31m Rebuilds)[0m
+    Changed Output Files
+        - bazel-out/darwin_arm64-fastbuild/bin/cli/pro/pkg/aspect/execlog/tree/blades/blades.a  [0;36m([0m[0;36m0 Bytes[0m[0;36m)[0m
+
+    Changed Input Files
+        - bazel-out/darwin_arm64-fastbuild/bin/cli/pro/pkg/aspect/execlog/types/types.x  [0;36m([0m[0;36m0 Bytes[0m[0;36m)[0m
+
+    Changed Dependencies
+        [1;33m//cli/pro/pkg/aspect/execlog/types:types[0m
+            - bazel-out/darwin_arm64-fastbuild/bin/cli/pro/pkg/aspect/execlog/types/types.x
+
+
+[0;32m//cli/pro/pkg/aspect/execlog/tree:tree[0m     [0;31m(Caused [0m[0;31m1[0m[0;31m Rebuilds)[0m
+    Changed Output Files
+        - bazel-out/darwin_arm64-fastbuild/bin/cli/pro/pkg/aspect/execlog/tree/tree.a  [0;36m([0m[0;36m4.88 KB[0m[0;36m)[0m
+
+    Changed Input Files
+        - bazel-out/darwin_arm64-fastbuild/bin/cli/pro/pkg/aspect/execlog/types/types.x  [0;36m([0m[0;36m4.88 KB[0m[0;36m)[0m
+
+    Changed Dependencies
+        [1;33m//cli/pro/pkg/aspect/execlog/types:types[0m
+            - bazel-out/darwin_arm64-fastbuild/bin/cli/pro/pkg/aspect/execlog/types/types.x
+
+
+[0;32m//cli/pro/pkg/aspect/execlog/types:types[0m     [0;31m(Caused [0m[0;31m11[0m[0;31m Rebuilds)[0m
+    Changed Output Files
+        - bazel-out/darwin_arm64-fastbuild/bin/cli/pro/pkg/aspect/execlog/types/types.a  [0;36m([0m[0;36m46.57 GB[0m[0;36m)[0m
+        - bazel-out/darwin_arm64-fastbuild/bin/cli/pro/pkg/aspect/execlog/types/types.x  [0;36m([0m[0;36m46.57 GB[0m[0;36m)[0m
+
+    Changed Input Files
+        - cli/pro/pkg/aspect/execlog/types/testing_file.go  [0;36m([0m[0;36m46.57 GB[0m[0;36m)[0m
+
+
+[0;32m//cli/pro/pkg/aspect/execlog:execlog[0m     [0;31m(Caused [0m[0;31m1[0m[0;31m Rebuilds)[0m
+    Changed Output Files
+        - bazel-out/darwin_arm64-fastbuild/bin/cli/pro/pkg/aspect/execlog/execlog.a  [0;36m([0m[0;36m46.57 GB[0m[0;36m)[0m
+
+    Changed Input Files
+        - bazel-out/darwin_arm64-fastbuild/bin/cli/pro/pkg/aspect/execlog/types/types.x  [0;36m([0m[0;36m46.57 GB[0m[0;36m)[0m
+
+    Changed Dependencies
+        [1;33m//cli/pro/pkg/aspect/execlog/types:types[0m
+            - bazel-out/darwin_arm64-fastbuild/bin/cli/pro/pkg/aspect/execlog/types/types.x
+
+
+[0;32m//cli/pro:pro[0m
+    Changed Input Files
+        - bazel-out/darwin_arm64-fastbuild/bin/cli/pro/pkg/aspect/execlog/convert/convert.a  [0;36m([0m[0;36m4.77 MB[0m[0;36m)[0m
+        - bazel-out/darwin_arm64-fastbuild/bin/cli/pro/pkg/aspect/execlog/execlog.a  [0;36m([0m[0;36m4.77 MB[0m[0;36m)[0m
+        - bazel-out/darwin_arm64-fastbuild/bin/cli/pro/pkg/aspect/execlog/normalize/normalize.a  [0;36m([0m[0;36m4.77 MB[0m[0;36m)[0m
+        - bazel-out/darwin_arm64-fastbuild/bin/cli/pro/pkg/aspect/execlog/tree/blades/blades.a  [0;36m([0m[0;36m4.77 MB[0m[0;36m)[0m
+        - bazel-out/darwin_arm64-fastbuild/bin/cli/pro/pkg/aspect/execlog/tree/tree.a  [0;36m([0m[0;36m4.77 MB[0m[0;36m)[0m
+        - bazel-out/darwin_arm64-fastbuild/bin/cli/pro/pkg/aspect/execlog/types/types.a  [0;36m([0m[0;36m4.77 MB[0m[0;36m)[0m
+
+    Changed Dependencies
+        [1;33m//cli/pro/pkg/aspect/execlog/convert:convert[0m
+            - bazel-out/darwin_arm64-fastbuild/bin/cli/pro/pkg/aspect/execlog/convert/convert.a
+
+        [1;33m//cli/pro/pkg/aspect/execlog/normalize:normalize[0m
+            - bazel-out/darwin_arm64-fastbuild/bin/cli/pro/pkg/aspect/execlog/normalize/normalize.a
+
+        [1;33m//cli/pro/pkg/aspect/execlog/tree/blades:blades[0m
+            - bazel-out/darwin_arm64-fastbuild/bin/cli/pro/pkg/aspect/execlog/tree/blades/blades.a
+
+        [1;33m//cli/pro/pkg/aspect/execlog/tree:tree[0m
+            - bazel-out/darwin_arm64-fastbuild/bin/cli/pro/pkg/aspect/execlog/tree/tree.a
+
+        [1;33m//cli/pro/pkg/aspect/execlog/types:types[0m
+            - bazel-out/darwin_arm64-fastbuild/bin/cli/pro/pkg/aspect/execlog/types/types.a
+
+        [1;33m//cli/pro/pkg/aspect/execlog:execlog[0m
+            - bazel-out/darwin_arm64-fastbuild/bin/cli/pro/pkg/aspect/execlog/execlog.a
+
+

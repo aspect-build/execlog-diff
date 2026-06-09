@@ -1,0 +1,38 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "sawmill",
+    srcs = [
+        "arguments.go",
+        "helpers.go",
+        "input_files.go",
+        "output_files.go",
+        "sawmill.go",
+    ],
+    importpath = "github.com/aspect-build/execlog-diff/tree/sawmill",
+    visibility = ["//tree:__subpackages__"],
+    deps = [
+        "//normalizer",
+        "//result/proto",
+        "//types",
+    ],
+)
+
+go_test(
+    name = "sawmill_test",
+    srcs = [
+        "arguments_test.go",
+        "helpers_test.go",
+        "input_files_test.go",
+        "output_files_test.go",
+    ],
+    embed = [":sawmill"],
+    deps = [
+        "//context",
+        "//normalizer",
+        "//result/proto",
+        "//test-data/helpers",
+        "//types",
+        "@com_github_onsi_gomega//:gomega",
+    ],
+)

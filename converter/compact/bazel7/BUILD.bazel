@@ -1,0 +1,43 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "bazel7",
+    srcs = [
+        "bazel7.go",
+        "helpers.go",
+        "process.go",
+        "unmarshal.go",
+    ],
+    importpath = "github.com/aspect-build/execlog-diff/converter/compact/bazel7",
+    visibility = ["//converter/compact:__subpackages__"],
+    deps = [
+        "//third_party/github.com/bazelbuild/bazel7/src/main/protobuf/spawn",  # keep
+        "//context",
+        "//converter/compact/decompress",
+        "//types",
+        "//diagnostic:diagnostic_go_proto",
+        "@org_golang_google_protobuf//encoding/protodelim",
+        "@org_golang_google_protobuf//reflect/protoreflect",
+    ],
+)
+
+go_test(
+    name = "bazel7_test",
+    srcs = [
+        "bazel7_test.go",
+        "process_test.go",
+    ],
+    data = [
+        "//test-data:execlogs",
+    ] + glob(["testdata/**/*"]),
+    embed = [":bazel7"],
+    deps = [
+        "//third_party/github.com/bazelbuild/bazel7/src/main/protobuf/spawn",
+        "//context",
+        "//test-data/helpers",
+        "//types",
+        "@com_github_onsi_gomega//:gomega",
+        "@org_golang_google_protobuf//reflect/protoreflect",
+        "@tools_gotest_v3//golden",
+    ],
+)

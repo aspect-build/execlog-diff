@@ -1,0 +1,21 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "context",
+    srcs = ["context.go"],
+    importpath = "github.com/aspect-build/execlog-diff/context",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//diagnostic:diagnostic_go_proto",
+    ],
+)
+
+go_test(
+    name = "context_test",
+    srcs = ["context_test.go"],
+    embed = [":context"],
+    deps = [
+        "//diagnostic:diagnostic_go_proto",
+        "@com_github_onsi_gomega//:gomega",
+    ],
+)

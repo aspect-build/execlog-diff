@@ -1,32 +1,83 @@
-# If you prefer the allow list template instead of the deny list, see community template:
-# https://github.com/github/gitignore/blob/main/community/Golang/Go.AllowList.gitignore
-#
-# Binaries for programs and plugins
-*.exe
-*.exe~
-*.dll
-*.so
-*.dylib
+# -*- mode: gitignore; -*-
+# if you don't have the mode: -> https://github.com/magit/git-modes.git
 
-# Test binary, built with `go test -c`
-*.test
+# ---------------------------
+# CLAUDE
+# ---------------------------
+.claude
+CLAUDE.local.md
 
-# Code coverage profiles and other test artifacts
-*.out
-coverage.*
-*.coverprofile
-profile.cov
+/bazel-*
+.idea
+.zed
+.ijwb
+.zed
+.vscode
+.DS_Store
+**/target/
 
-# Dependency directories (remove the comment below to include it)
-# vendor/
+# Bazel's MODULE lockfile isn't ready to check in yet as of Bazel 7.1.
+# Do allow for it to be created, however, since it gives a performance boost for local development.
+# [Store resolved repository attributes in the Bzlmod lockfile](https://github.com/bazelbuild/bazel/issues/19026)
+# [MODULE.bazel.lock file contains user specific paths](https://github.com/bazelbuild/bazel/issues/19621)
+# [Consider skipping bazel_tools@_ from lockfile](https://github.com/bazelbuild/bazel/issues/19971)
+# [MODULE.bazel.lock file "reads through" already-locked package manager](https://github.com/bazelbuild/bazel/issues/20272)
+# [moduleFileHash in MODULE.bazel.lock causes frequent Git merge conflicts](https://github.com/bazelbuild/bazel/issues/20369)
+MODULE.bazel.lock
+WORKSPACE.bazel
 
-# Go workspace file
-go.work
-go.work.sum
+# ------------------------
+# emacs - https://github.com/github/gitignore/blob/main/Global/Emacs.gitignore
+# ------------------------
 
-# env file
-.env
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
 
-# Editor/IDE
-# .idea/
-# .vscode/
+# Org-mode
+.org-id-locations
+*_archive
+
+# flymake-mode
+*_flymake.*
+
+# eshell files
+/eshell/history
+/eshell/lastdir
+
+# elpa packages
+/elpa/
+
+# reftex files
+*.rel
+
+# AUCTeX auto folder
+/auto/
+
+# cask packages
+.cask/
+dist/
+
+# Flycheck
+flycheck_*.el
+
+# server auth directory
+/server/
+
+# projectiles files
+.projectile
+
+# directory configuration
+.dir-locals.el
+
+# network security
+/network-security.data
+
+# sqlite data blobs
+**/*.db
+**/*.sqlite*
