@@ -1,0 +1,42 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+alias(
+    name = "bin",
+    actual = "//cli:execlog-diff",
+)
+
+go_library(
+    name = "execlog-diff",
+    srcs = ["execlog_diff.go"],
+    importpath = "github.com/aspect-build/execlog-diff",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//context",
+        "//converter",
+        "//normalizer",
+        "//result/proto",
+        "//tree",
+        "//types",
+    ],
+)
+
+go_test(
+    name = "execlog_diff_test",
+    srcs = ["execlog_diff_test.go"],
+    data = [
+        "//test-data:execlogs",
+    ],
+    embed = [":execlog-diff"],
+    deps = [
+        "//context",
+        "//normalizer",
+        "//result/proto",
+        "//result/terminal",
+        "//tree",
+        "//types",
+        "//diagnostic:diagnostic_go_proto",
+        "@com_github_onsi_gomega//:gomega",
+        "@com_github_onsi_gomega//gstruct",
+        "@com_github_onsi_gomega//matchers",
+    ],
+)

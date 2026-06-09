@@ -1,0 +1,24 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
+
+go_library(
+    name = "lib",
+    srcs = [
+        "explain.go",
+        "main.go",
+    ],
+    importpath = "github.com/aspect-build/execlog-diff/cli",
+    visibility = ["//visibility:private"],
+    deps = [
+        "//:execlog-diff",
+        "//result/html",
+        "//result/terminal",
+        "//diagnostic:diagnostic_go_proto",
+        "@com_github_spf13_cobra//:cobra",
+    ],
+)
+
+go_binary(
+    name = "execlog-diff",
+    embed = [":lib"],
+    visibility = ["//visibility:public"],
+)

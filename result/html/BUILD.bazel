@@ -1,0 +1,17 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "html",
+    srcs = [
+        "exec_diff.go",
+        "html.go",
+    ],
+    importpath = "github.com/aspect-build/execlog-diff/result/html",
+    visibility = [
+        "//:__subpackages__",
+    ],
+    deps = [
+        "//result/proto",
+        "//diagnostic:diagnostic_go_proto",
+    ],
+)

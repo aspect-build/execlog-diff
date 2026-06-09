@@ -1,0 +1,45 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "seed",
+    srcs = [
+        "germinate.go",
+        "seed.go",
+    ],
+    importpath = "github.com/aspect-build/execlog-diff/tree/seed",
+    visibility = ["//tree:__subpackages__"],
+    deps = [
+        "//context",
+        "//normalizer",
+        "//types",
+    ],
+)
+
+go_test(
+    name = "seed_test",
+    srcs = [
+        "germinate_test.go",
+        "seed_test.go",
+    ],
+    data = [
+        ":testdata",
+        "//normalizer:testdata",
+    ],
+    embed = [":seed"],
+    deps = [
+        "//context",
+        "//normalizer",
+        "//test-data/helpers",
+        "//types",
+        "//diagnostic:diagnostic_go_proto",
+        "@com_github_onsi_gomega//:gomega",
+        "@tools_gotest_v3//golden",
+    ],
+)
+
+filegroup(
+    name = "testdata",
+    testonly = True,
+    srcs = glob(["testdata/**/*"]),
+    visibility = ["//:__subpackages__"],
+)

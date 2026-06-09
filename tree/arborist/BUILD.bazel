@@ -1,0 +1,35 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "arborist",
+    srcs = [
+        "arborist.go",
+        "arguments.go",
+        "environment.go",
+        "files.go",
+    ],
+    importpath = "github.com/aspect-build/execlog-diff/tree/arborist",
+    visibility = ["//tree:__subpackages__"],
+    deps = [
+        "//normalizer",
+        "//types",
+    ],
+)
+
+go_test(
+    name = "arborist_test",
+    srcs = [
+        "arborist_test.go",
+        "arguments_test.go",
+        "environment_test.go",
+        "files_test.go",
+    ],
+    embed = [":arborist"],
+    deps = [
+        "//context",
+        "//normalizer",
+        "//test-data/helpers",
+        "//types",
+        "@com_github_onsi_gomega//:gomega",
+    ],
+)

@@ -1,0 +1,23 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "bazel8_4_2",
+    srcs = [
+        "bazel8_4_2.go",
+        "helpers.go",
+        "process.go",
+        "unmarshal.go",
+        "version_check.go",
+    ],
+    importpath = "github.com/aspect-build/execlog-diff/converter/compact/bazel8_4_2",
+    visibility = ["//converter/compact:__subpackages__"],
+    deps = [
+        "//third_party/github.com/bazelbuild/bazel8_4_2/src/main/protobuf/spawn",  # keep
+        "//context",
+        "//converter/compact/decompress",
+        "//types",
+        "//diagnostic:diagnostic_go_proto",
+        "@org_golang_google_protobuf//encoding/protodelim",
+        "@org_golang_google_protobuf//reflect/protoreflect",
+    ],
+)

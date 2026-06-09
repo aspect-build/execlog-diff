@@ -1,0 +1,46 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "bazel8",
+    srcs = [
+        "bazel8.go",
+        "helpers.go",
+        "process.go",
+        "unmarshal.go",
+        "version_check.go",
+    ],
+    importpath = "github.com/aspect-build/execlog-diff/converter/compact/bazel8",
+    visibility = ["//converter/compact:__subpackages__"],
+    deps = [
+        "//third_party/github.com/bazelbuild/bazel8/src/main/protobuf/spawn",  # keep
+        "//context",
+        "//converter/compact/decompress",
+        "//types",
+        "//diagnostic:diagnostic_go_proto",
+        "@org_golang_google_protobuf//encoding/protodelim",
+        "@org_golang_google_protobuf//reflect/protoreflect",
+    ],
+)
+
+go_test(
+    name = "bazel8_test",
+    srcs = [
+        "bazel8_test.go",
+        "process_test.go",
+        "version_check_test.go",
+    ],
+    data = [
+        "//test-data:execlogs",
+    ] + glob(["testdata/**/*"]),
+    embed = [":bazel8"],
+    deps = [
+        "//third_party/github.com/bazelbuild/bazel8/src/main/protobuf/spawn",
+        "//context",
+        "//test-data/helpers",
+        "//types",
+        "//diagnostic:diagnostic_go_proto",
+        "@com_github_onsi_gomega//:gomega",
+        "@org_golang_google_protobuf//reflect/protoreflect",
+        "@tools_gotest_v3//golden",
+    ],
+)

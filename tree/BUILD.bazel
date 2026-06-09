@@ -1,0 +1,53 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "tree",
+    srcs = [
+        "diff.go",
+        "query.go",
+        "tree.go",
+    ],
+    importpath = "github.com/aspect-build/execlog-diff/tree",
+    visibility = ["//:__subpackages__"],
+    deps = [
+        "//context",
+        "//normalizer",
+        "//result/proto",
+        "//tree/arborist",
+        "//tree/chainsaw",
+        "//tree/sawmill",
+        "//tree/seed",
+        "//types",
+    ],
+)
+
+go_test(
+    name = "tree_test",
+    srcs = ["diff_test.go"],
+    data = [
+        ":testdata",
+        "//test-data:execlogs",
+    ],
+    embed = [":tree"],
+    deps = [
+        "//context",
+        "//converter",
+        "//normalizer",
+        "//result/proto",
+        "//tree/arborist",
+        "//tree/chainsaw",
+        "//tree/sawmill",
+        "//tree/seed",
+        "//types",
+        "@com_github_onsi_gomega//:gomega",
+        "@com_github_onsi_gomega//gstruct",
+        "@com_github_onsi_gomega//matchers",
+    ],
+)
+
+filegroup(
+    name = "testdata",
+    testonly = True,
+    srcs = glob(["testdata/**/*"]),
+    visibility = ["//:__subpackages__"],
+)

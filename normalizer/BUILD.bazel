@@ -1,0 +1,61 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "normalizer",
+    srcs = [
+        "hash_arg_file_paths.go",
+        "hash_env.go",
+        "hash_environment_values.go",
+        "hash_file_paths.go",
+        "hash_spawn.go",
+        "normalizer.go",
+        "populate_files.go",
+        "store_file_sizes.go",
+        "store_files.go",
+        "store_input_set.go",
+        "store_runfiles_trees.go",
+    ],
+    importpath = "github.com/aspect-build/execlog-diff/normalizer",
+    visibility = ["//:__subpackages__"],
+    deps = [
+        "//context",
+        "//types",
+        "//diagnostic:diagnostic_go_proto",
+    ],
+)
+
+go_test(
+    name = "normalizer_test",
+    srcs = [
+        "hash_arg_file_paths_test.go",
+        "hash_env_test.go",
+        "hash_environment_values_test.go",
+        "hash_file_paths_test.go",
+        "hash_spawn_test.go",
+        "normalizer_test.go",
+        "populate_files_test.go",
+        "store_files_test.go",
+        "store_input_set_test.go",
+    ],
+    data = [
+        ":testdata",
+        "//test-data:execlogs",
+    ],
+    embed = [":normalizer"],
+    deps = [
+        "//context",
+        "//converter",
+        "//test-data/helpers",
+        "//types",
+        "//diagnostic:diagnostic_go_proto",
+        "@com_github_onsi_gomega//:gomega",
+        "@tools_gotest_v3//golden",
+    ],
+)
+
+filegroup(
+    name = "testdata",
+    testonly = True,
+    srcs = glob(["testdata/**/*"]),
+    visibility = ["//:__subpackages__"],
+)

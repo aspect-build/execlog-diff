@@ -1,0 +1,32 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "chainsaw",
+    srcs = ["chainsaw.go"],
+    importpath = "github.com/aspect-build/execlog-diff/tree/chainsaw",
+    visibility = ["//tree:__subpackages__"],
+    deps = [
+        "//context",
+        "//normalizer",
+        "//tree/seed",
+        "//tree/woodchipper",
+        "//types",
+    ],
+)
+
+go_test(
+    name = "chainsaw_test",
+    srcs = ["chainsaw_test.go"],
+    data = [
+        "//test-data:execlogs",
+    ],
+    embed = [":chainsaw"],
+    deps = [
+        "//context",
+        "//converter",
+        "//normalizer",
+        "//tree/seed",
+        "//types",
+        "@com_github_onsi_gomega//:gomega",
+    ],
+)

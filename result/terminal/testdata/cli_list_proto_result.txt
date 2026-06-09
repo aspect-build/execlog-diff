@@ -1,0 +1,29 @@
+{
+  "result":  {
+    "labelQuery":  {
+      "labels":  [
+        {
+          "targetLabel":  "//cli/pro/pkg/aspect/execlog/tree/blades:blades",
+          "cacheHit":  true,
+          "remoteable":  true,
+          "cacheable":  true,
+          "remoteCacheable":  true
+        },
+        {
+          "targetLabel":  "//cli/pro/pkg/aspect/execlog/normalize:normalize",
+          "cacheHit":  false,
+          "remoteable":  true,
+          "cacheable":  true,
+          "remoteCacheable":  true
+        },
+        {
+          "targetLabel":  "//cli/pro/pkg/aspect/execlog/tree:tree",
+          "cacheHit":  true,
+          "remoteable":  false,
+          "cacheable":  true,
+          "remoteCacheable":  false
+        }
+      ]
+    }
+  }
+}

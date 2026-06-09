@@ -1,0 +1,42 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+load("@io_bazel_rules_go//proto:def.bzl", "go_proto_library")
+load("@rules_proto//proto:defs.bzl", "proto_library")
+load("//bazel/go:write_go_generated_source_files.bzl", "write_go_generated_source_files")
+
+go_library(
+    name = "spawn",
+    srcs = ["spawn.pb.go"],
+    importpath = "github.com/aspect-build/execlog-diff/third_party/github.com/bazelbuild/bazel8_4_2/src/main/protobuf/spawn",
+    visibility = ["//converter:__subpackages__"],
+    deps = [
+        "@org_golang_google_protobuf//reflect/protoreflect",
+        "@org_golang_google_protobuf//runtime/protoimpl",
+        "@org_golang_google_protobuf//types/known/durationpb",
+        "@org_golang_google_protobuf//types/known/timestamppb",
+    ],
+)
+
+proto_library(
+    name = "spawn_proto",
+    srcs = ["spawn.proto"],
+    visibility = ["//visibility:public"],
+    deps = [
+        "@com_google_protobuf//:duration_proto",
+        "@com_google_protobuf//:timestamp_proto",
+    ],
+)
+
+go_proto_library(
+    name = "spawn_gen",
+    importpath = "github.com/aspect-build/execlog-diff/third_party/github.com/bazelbuild/bazel8_4_2/src/main/protobuf/spawn",
+    proto = ":spawn_proto",
+    visibility = ["//converter:__subpackages__"],
+)
+
+write_go_generated_source_files(
+    name = "write_pb_go",
+    src = ":spawn_gen",
+    output_files = [
+        "spawn.pb.go",
+    ],
+)

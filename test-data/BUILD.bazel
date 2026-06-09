@@ -1,0 +1,29 @@
+load("//test-data/generator:execlogs.bzl", "EXECLOGS")
+
+genrule(
+    name = "execlogs_from_tar",
+    srcs = [
+        "@execlog_diff_testdata_execlogs//file",
+    ],
+    outs = EXECLOGS,
+    cmd = " ".join([
+        "$(BSDTAR_BIN)",
+        "-xf",
+        "$<",
+        "-C",
+        "$$(dirname $(location %s))" % EXECLOGS[0],
+    ]),
+    tags = ["no-remote-exec"],
+    toolchains = ["@bsd_tar_toolchains//:resolved_toolchain"],
+)
+
+filegroup(
+    name = "execlogs",
+    srcs = [
+        "empty.execlog.binary.log",
+        "empty.execlog.compact.log",
+        "empty.execlog.json",
+        ":execlogs_from_tar",
+    ],
+    visibility = ["//:__subpackages__"],
+)

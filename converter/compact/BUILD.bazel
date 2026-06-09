@@ -1,0 +1,32 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "compact",
+    srcs = ["compact.go"],
+    importpath = "github.com/aspect-build/execlog-diff/converter/compact",
+    visibility = ["//converter:__subpackages__"],
+    deps = [
+        "//context",
+        "//converter/compact/bazel7",
+        "//converter/compact/bazel8",
+        "//converter/compact/bazel8_4_2",
+        "//types",
+    ],
+)
+
+go_test(
+    name = "compact_test",
+    srcs = ["compact_test.go"],
+    data = [
+        "//test-data:execlogs",
+    ] + glob(["testdata/**/*"]),
+    embed = [":compact"],
+    deps = [
+        "//context",
+        "//test-data/helpers",
+        "//types",
+        "//diagnostic:diagnostic_go_proto",
+        "@com_github_onsi_gomega//:gomega",
+        "@tools_gotest_v3//golden",
+    ],
+)

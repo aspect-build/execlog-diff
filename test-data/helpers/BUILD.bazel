@@ -1,0 +1,29 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "helpers",
+    testonly = True,
+    srcs = [
+        "contains_file.go",
+        "contains_input_set.go",
+        "contains_spawn.go",
+        "create_chan_from_golden_file.go",
+        "create_golden_file_from_chan.go",
+        "create_golden_file_from_list.go",
+        "create_list_from_chan.go",
+        "populate_chan.go",
+    ],
+    importpath = "github.com/aspect-build/execlog-diff/test-data/helpers",
+    visibility = ["//:__subpackages__"],
+    deps = ["//types"],
+)
+
+go_test(
+    name = "helpers_test",
+    srcs = ["contains_file_test.go"],
+    embed = [":helpers"],
+    deps = [
+        "//types",
+        "@com_github_onsi_gomega//:gomega",
+    ],
+)
